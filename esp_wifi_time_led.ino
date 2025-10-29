@@ -25,7 +25,7 @@ void initializeAndSyncRTC() {
   pinMode(LED_EXTRA, OUTPUT); // pin set as output
 
   digitalWrite(LED_PIN, HIGH); // LED OFF initially
-  digitalWrite(LED_EXTRA, LOW);
+  digitalWrite(LED_EXTRA, HIGH);
 
   Serial.println();
   Serial.println("=== RTC + NTP Initialization ===");
@@ -35,9 +35,9 @@ void initializeAndSyncRTC() {
     Serial.println("❌ Couldn't find PCF8563 RTC! LED will blink fast.");
     while (true) {
       digitalWrite(LED_PIN, LOW); delay(200);
-      digitalWrite(LED_EXTRA, HIGH); delay(200);
-      digitalWrite(LED_PIN, HIGH); delay(200);
       digitalWrite(LED_EXTRA, LOW); delay(200);
+      digitalWrite(LED_PIN, HIGH); delay(200);
+      digitalWrite(LED_EXTRA, HIGH); delay(200);
     }
   }
   Serial.println("✅ PCF8563 RTC found!");
@@ -58,9 +58,9 @@ void initializeAndSyncRTC() {
     Serial.println("\n❌ WiFi connection failed! LED will blink slowly.");
     while (true) {
       digitalWrite(LED_PIN, LOW); delay(500);
-      digitalWrite(LED_EXTRA, HIGH); delay(500);
-      digitalWrite(LED_PIN, HIGH); delay(500);
       digitalWrite(LED_EXTRA, LOW); delay(500);
+      digitalWrite(LED_PIN, HIGH); delay(500);
+      digitalWrite(LED_EXTRA, HIGH); delay(500);
     }
   }
   Serial.println("\n✅ WiFi connected!");
@@ -114,9 +114,9 @@ void initializeAndSyncRTC() {
     Serial.println("❌ RTC not updated (NTP failed). LED will blink slowly.");
     while (true) {
       digitalWrite(LED_PIN, LOW); delay(500);
-      digitalWrite(LED_EXTRA, HIGH); delay(500);
-      digitalWrite(LED_PIN, HIGH); delay(500);
       digitalWrite(LED_EXTRA, LOW); delay(500);
+      digitalWrite(LED_PIN, HIGH); delay(500);
+      digitalWrite(LED_EXTRA, HIGH); delay(500);
     }
   }
 }
