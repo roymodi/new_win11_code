@@ -1,0 +1,22 @@
+# for root 
+
+apt update
+apt install -y \
+python3 python3-pip \
+alsa-utils sox \
+vlc \
+git \
+espeak-ng \
+jq
+   
+
+
+
+
+
+# for dietpi user
+
+sudo apt update
+sudo apt install -y python3 python3-pip alsa-utils sox vlc git espeak-ng jq
+
+

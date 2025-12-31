@@ -1,0 +1,13 @@
+#bash command:
+nano /etc/asound.conf
+
+#ini:  //text.txt file
+pcm.!default {
+  type hw
+  card 1
+}
+
+ctl.!default {
+  type hw
+  card 1
+}

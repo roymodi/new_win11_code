@@ -1,0 +1,43 @@
+🧩 PART-1 — SYSTEM FOUNDATION
+STEP 1️⃣ Install Required Packages
+
+STEP 2️⃣ Python Libraries (LOW RAM SAFE)
+
+🔊 PART-1 FILES (REAL CODE):
+
+📄 tts.py — Text to Speech (Hindi + English)
+
+📄 volume.py — Voice Volume Control
+
+📄 music.py — SONG SYSTEM (JSON AUTO SAVE)
+
+📄 wakeword.py — “Alexa” Listener
+
+📄 stt.py — Offline Speech Recognition
+
+📄 intent.py — Hindi + English Fuzzy Intent Detection
+
+📄 main.py — MAIN BRAIN
+
+Task smart speaker do:
+
+🌦 weather.py — Weather (Online, Lightweight)
+
+🌐 qa.py — Google Question & Answer
+
+🔔 alarm.py — Alarm & Reminder System
+
+🌙 night.py — Night Silent Hours
+
+🎙 mic.py — Mic Mute / Unmute
+
+👥 profiles.py — MULTI-USER VOICE PROFILES
+
+hindi_intent.py — ADVANCED HINDI INTENT DETECTION
+
+ml_intent.py — LIGHTWEIGHT ML INTENT CLASSIFIER
+
+learner.py — CONTINUOUS SELF-LEARNING ENGINE
+
+AUTOSTART ON BOOT 
+boot_setup_autostart.txt

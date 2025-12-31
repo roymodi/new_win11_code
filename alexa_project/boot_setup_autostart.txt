@@ -1,0 +1,46 @@
+
+#bash command:
+
+nano /etc/systemd/system/alexa.service
+
+
+
+#ini edit:
+
+[Unit]
+Description=AlexaLite Assistant
+After=network.target sound.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/alexa/main.py
+WorkingDirectory=/home/alexa
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+
+#Enable: 
+#bash command:
+
+systemctl enable alexa
+systemctl start alexa
+
+
+
+_______________________________
+
+[Unit]
+Description=AlexaLite Assistant
+After=network.target sound.target
+
+[Service]
+ExecStart=/home/alexa_venv/bin/python /home/alexa/main.py
+WorkingDirectory=/home/alexa
+Restart=always
+User=dietpi
+Group=dietpi
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,85 @@
+/home/dietpi/alexa_project/
+│
+├─ main.py
+├─ intent.py
+├─ learner.py
+├─ mic.py
+├─ music.py
+├─ qa.py
+├─ stt.py
+├─ tts.py
+├─ wakeword.py
+├─ weather.py
+├─ alarm.py
+├─ night.py
+├─ profiles.py
+├─ ml_intent.py (if using ML)
+├─ models/        <-- vosk models (en + hi)
+├─ data/          <-- JSON files for songs, favorites, playlists, intents, users
+
+----------------------------------------
+
+#Systemd Service File
+
+#Create the service file:
+
+sudo nano /etc/systemd/system/alexa.service
+
+
+#Paste this:
+
+[Unit]
+Description=AlexaLite Assistant
+After=network.target sound.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/dietpi/alexa_project
+ExecStart=/home/dietpi/alexa_venv/bin/python /home/dietpi/alexa_project/main.py
+Restart=always
+User=dietpi
+Group=dietpi
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+
+
+--------------------------------------
+
+
+#WorkingDirectory points to your project folder.
+
+#ExecStart uses virtual environment Python.
+
+#Environment=PYTHONUNBUFFERED=1 ensures logs are visible in journalctl.
+
+#User=dietpi avoids running as root. Make sure dietpi is in the audio group:
+
+sudo usermod -aG audio dietpi
+
+---------------------------------
+
+#Enable & Start Service:
+
+sudo systemctl daemon-reload
+sudo systemctl enable alexa
+sudo systemctl start alexa
+sudo systemctl status alexa
+
+--------------------------------
+
+#Check logs:
+journalctl -u alexa -f
+
+-----------------------------------
+
+Virtual Environment Setup:
+
+python3 -m venv ~/alexa_venv
+source ~/alexa_venv/bin/activate
+pip install --upgrade pip
+pip install vosk sounddevice rapidfuzz yt-dlp requests scikit-learn
+deactivate
+
+

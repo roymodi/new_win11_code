@@ -1,0 +1,12 @@
+pip3 install \
+vosk \
+sounddevice \
+rapidfuzz \
+yt-dlp \
+requests \
+scikit-learn
+
+
+# it work in dietpi os :
+
+python3 -m venv ~/alexa_venv && source ~/alexa_venv/bin/activate && pip install --upgrade pip && pip install vosk sounddevice rapidfuzz yt-dlp requests scikit-learn

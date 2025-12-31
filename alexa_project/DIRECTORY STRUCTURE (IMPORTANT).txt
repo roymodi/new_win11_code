@@ -1,0 +1,28 @@
+DIRECTORY STRUCTURE (IMPORTANT)
+
+/home/alexa/
+│
+├── main.py                # Main brain
+├── wakeword.py            # Wake word listener
+├── stt.py                 # Speech to text
+├── tts.py                 # Text to speech
+├── intent.py              # Intent detection (ML + fuzzy)
+├── music.py               # Music system
+├── weather.py             # Weather
+├── alarm.py               # Alarm & reminders
+├── gpio.py                # ESP12F control
+├── volume.py              # Volume control
+├── profiles.py            # Voice profiles
+├── learner.py             # Continuous learning
+│
+├── data/
+│   ├── songs.json         # Song DB
+│   ├── playlists.json
+│   ├── favorites.json
+│   ├── users.json
+│
+├── models/
+│   ├── vosk-en/
+│   ├── vosk-hi/
+│
+└── logs/
